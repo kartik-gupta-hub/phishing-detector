@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Next.js / frontend builds
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Local environment and secrets
+.env
+.env.*
+*.env
+*.local
+*.local.*
+frontend/.env local.md
+
+# Runtime data and logs
+run_logs/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

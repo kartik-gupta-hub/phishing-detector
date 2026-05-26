@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #02040a;
+  --foreground: #f8fafc;
+  --muted: #94a3b8;
+  --card-bg: rgba(5, 11, 20, 0.45);
+  --card-border: rgba(6, 182, 212, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  background-image: 
+    radial-gradient(circle at top left, rgba(139, 92, 246, 0.08), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.05), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.03), transparent 50%);
+  background-attachment: fixed;
+  font-family: var(--font-inter), sans-serif;
+  min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #02040a; 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3); 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.5); 
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(10, 19, 36, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-border {
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  box-shadow: inset 0 0 12px rgba(6, 182, 212, 0.15), 0 0 24px rgba(6, 182, 212, 0.3);
+}
+
+::selection {
+  background: rgba(139, 92, 246, 0.4);
+  color: #fff;
+}
+
+.pdf-export-shell {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 794px;
+  pointer-events: none;
+  z-index: -1;
+  contain: layout style paint;
+}
+
+.pdf-export-shell,
+.pdf-export-shell * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  position: static;
+  overflow: visible !important;
+}
+
+.pdf-report {
+  width: 794px;
+  padding: 40px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+.pdf-report,
+.pdf-report * {
+  box-sizing: border-box;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.pdf-section {
+  margin-bottom: 24px;
+  border: 1px solid #dbe3f0;
+  border-radius: 18px;
+  padding: 24px;
+  background: #ffffff;
+}
+
+.pdf-hero {
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.pdf-kicker,
+.pdf-label {
+  display: block;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pdf-report h1,
+.pdf-report h2,
+.pdf-report h3,
+.pdf-report p {
+  margin: 0;
+}
+
+.pdf-report h1 {
+  margin-top: 10px;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.pdf-report h2 {
+  margin-top: 8px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.pdf-subtle {
+  margin-top: 10px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.pdf-meta-grid,
+.pdf-grid-two,
+.pdf-risk-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.pdf-meta-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 22px;
+}
+
+.pdf-risk-grid,
+.pdf-grid-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.pdf-meta-card,
+.pdf-detail-card,
+.pdf-score-card,
+.pdf-summary-card,
+.pdf-reason-card {
+  border: 1px solid #dbe3f0;
+  border-radius: 16px;
+  padding: 16px;
+  background: #f8fbff;
+}
+
+.pdf-target-block {
+  margin-top: 10px;
+  border: 1px solid #dbe3f0;
+  border-radius: 16px;
+  padding: 16px;
+  background: #f8fbff;
+  color: #0f172a;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.pdf-score-value {
+  margin-top: 10px;
+  font-size: 52px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.pdf-score-bar {
+  margin-top: 16px;
+  height: 12px;
+  border-radius: 999px;
+  background: #dbe3f0;
+  overflow: hidden !important;
+}
+
+.pdf-score-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.pdf-pill-row,
+.pdf-stack {
+  display: grid;
+  gap: 12px;
+}
+
+.pdf-pill-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.pdf-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border: 1px solid #dbe3f0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 14px;
+}
+
+.pdf-detail-card strong,
+.pdf-reason-card strong,
+.pdf-meta-card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.pdf-detail-card span,
+.pdf-reason-card p,
+.pdf-summary-card p,
+.pdf-meta-card span {
+  color: #334155;
+  line-height: 1.65;
+  word-break: break-word;
+}
